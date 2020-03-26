@@ -1,0 +1,87 @@
+#calc-body {
+    /* Setting up grid for buttons */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "calc-display calc-display calc-display calc-display"
+    "clear-btn clear-btn delete-btn operators"
+    "digit-btns digit-btns digit-btns operators"
+    "digit-btns digit-btns digit-btns operators"
+    "digit-btns digit-btns digit-btns operators"
+    "digit-btns digit-btns digit-btns operators";
+
+    width: 400px;
+    height: 600px;
+    margin: auto 50px;
+    font-family: "Courier New", Courier, monospace;
+
+}
+
+/* Strip initial button styles */
+button {
+    margin: 0;
+    padding: 0;
+    background: #d8d9db;
+    border: 1px solid black;
+    /* font-family: system-ui; */
+    font-size: 40px;
+}
+
+button:hover {
+    filter: contrast(110%);
+}
+
+button:focus {
+    opacity: 1.0;
+
+}
+
+#calc-screen {
+    grid-area: calc-display;
+    display: block;
+    text-align: right;
+    background: #333333;
+    color: white;
+    font-size: 60px;
+    padding: 20px 5px;
+
+}
+
+#clear-btn {
+    grid-area: clear-btn;
+}
+
+#delete-btn {
+    grid-area: delete-btn;
+    font-size: 2em;
+}
+
+#operator-wrapper {
+    grid-area: operators;
+    display: flex;
+    flex-direction: row;
+    flex-Wrap: wrap;
+}
+
+#digit-wrapper {
+    grid-area: digit-btns;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.operator {
+    background: #df974c;
+    color: white;
+    width: 100%;
+}
+
+.digit {
+    margin: 0;
+    flex-basis: 33.33333%;
+}
+
+#zero-btn {
+    flex-basis: 100%;
+}
